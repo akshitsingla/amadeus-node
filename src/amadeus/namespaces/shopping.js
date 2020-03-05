@@ -4,6 +4,7 @@ import FlightDates        from './shopping/flight_dates';
 import HotelOffers        from './shopping/hotel_offers';
 import HotelOffersByHotel from './shopping/hotel_offers_by_hotel';
 import HotelOffer         from './shopping/hotel_offer';
+import Seatmaps         from './shopping/seatmaps';
 
 
 /**
@@ -24,6 +25,7 @@ import HotelOffer         from './shopping/hotel_offer';
  * @property {HotelOffers} hotel_offers
  * @property {HotelOffer} hotel_offer
  * @property {HotelOffersByHotel} hotel_offers_by_hotel
+ * @property {Seatmaps} seatmaps
  */
 class Shopping {
   constructor(client) {
@@ -33,6 +35,7 @@ class Shopping {
     this.flightDates        = new FlightDates(client);
     this.hotelOffers        = new HotelOffers(client);
     this.hotelOffersByHotel = new HotelOffersByHotel(client);
+    this.seatmaps           = new Seatmaps(client);
   }
 
 

@@ -43,6 +43,7 @@ describe('Namespaces', () => {
       expect(amadeus.shopping.flightDestinations).toBeDefined();
       expect(amadeus.shopping.flightOffers).toBeDefined();
       expect(amadeus.shopping.flightOffers.prediction).toBeDefined();
+      expect(amadeus.shopping.seatmaps).toBeDefined();
 
       expect(amadeus.booking).toBeDefined();
       expect(amadeus.booking.flightOrders).toBeDefined();
@@ -83,6 +84,7 @@ describe('Namespaces', () => {
       expect(amadeus.shopping.flightDates.get).toBeDefined();
       expect(amadeus.shopping.flightDestinations.get).toBeDefined();
       expect(amadeus.shopping.flightOffers.get).toBeDefined();
+      expect(amadeus.shopping.seatmaps.get).toBeDefined();
 
       expect(amadeus.shopping.hotelOffers.get).toBeDefined();
       expect(amadeus.shopping.hotelOffersByHotel.get).toBeDefined();
@@ -222,6 +224,13 @@ describe('Namespaces', () => {
             'travelers': []
           }
         });
+    });
+
+    it('.amadeus.shopping.seatmaps.get', () => {
+      amadeus.client.get = jest.fn();
+      amadeus.shopping.seatmaps.get();
+      expect(amadeus.client.get)
+        .toHaveBeenCalledWith('/v1/shopping/seatmaps', {});
     });
 
     it('.amadeus.shopping.hotelOffers.get', () => {

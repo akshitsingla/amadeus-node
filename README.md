@@ -236,6 +236,13 @@ amadeus.shopping.flightOffersSearch.get({
     return amadeus.booking.flightOrders.post(response.flightOffers, travelers_info);
 });
 
+// Seatmaps Display
+// To list the seat map of every flight in
+// the flight Order with ID eJzTd9cPDPMwcooAAAtXAmE
+amadeus.shopping.seatmaps.get({
+  'flight-orderId' : 'eJzTd9cPDPMwcooAAAtXAmE'
+})
+
 // Flight Checkin Links
 amadeus.referenceData.urls.checkinLinks.get({
   airlineCode : 'BA'
